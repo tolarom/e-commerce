@@ -65,7 +65,7 @@ export default {
     width: 100%;
     display: flex;
     justify-content: space-between;
-}
+} 
 .poster-container {
     width: 100%;
     display: flex;

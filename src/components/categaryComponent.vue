@@ -28,7 +28,7 @@
         }
     }
 </script>
-
+ 
 <style scoped>
 .category {
     width: 136px;
