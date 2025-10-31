@@ -52,9 +52,9 @@ export default {
             <categaryComponent color="lightyellow" :image="cat13" text="Cake & Milk" :quantity="14"></categaryComponent>
         </div>
         <div class="poster-container">
-            <posterComponent backgroundColor="lightblue" :image="Cms1" title="Everyday Fresh & Clean with Our Products" ><buttonComponent>Shop Now &#8594;</buttonComponent></posterComponent>
-            <posterComponent backgroundColor="lightpink" :image="Cms2" title="Make your Breakfast Healthy and Easy" ><buttonComponent>Shop Now &#8594;</buttonComponent></posterComponent>
-            <posterComponent backgroundColor="lightpink" :image="Cms3" title="The best Organic Products Online" buttonColor="orange"><buttonComponent>Shop Now &#8594;</buttonComponent></posterComponent>
+            <posterComponent backgroundColor="lightblue" :image="Cms1" title="Everyday Fresh & Clean with Our Products" >Shop Now &#8594;</posterComponent>
+            <posterComponent backgroundColor="lightpink" :image="Cms2" title="Make your Breakfast Healthy and Easy" >Shop Now &#8594;</posterComponent>
+            <posterComponent backgroundColor="lightpink" :image="Cms3" title="The best Organic Products Online" buttonColor="orange">Shop Now &#8594;</posterComponent>
         </div>
     </div>
 </template>
