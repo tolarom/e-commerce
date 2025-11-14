@@ -2,7 +2,7 @@
     <div class="poster">
         <img :src="image || 'path/to/fallback-image.jpg'" alt="poster image" class="poster-image"/>
         <p class="title">{{ title }}</p>
-        <button :style="{backgroundColor: buttonColor}" class="poster-button">
+        <button :style="{backgroundColor: buttonColor}" class="poster-button" @click="ShopNow()">
             Shop Now &#8594;
         </button>
     </div>
@@ -21,10 +21,13 @@
                 type: String,
                 default: 'green'
             }
-
-
+        },
+        methods: {
+            ShopNow() {
+                alert('Let\'s shop ' + this.title);
+            }
         }
-    } 
+    }
 </script>
 
 <style scoped>
