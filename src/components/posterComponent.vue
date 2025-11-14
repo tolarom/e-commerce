@@ -1,9 +1,9 @@
 <template>
-    <div class="poster" :style="{backgroundColor: backgroundColor}">
-        <img v-if="image" :src="image" alt="poster image" class="poster-image"/>
+    <div class="poster">
+        <img :src="image || 'path/to/fallback-image.jpg'" alt="poster image" class="poster-image"/>
         <p class="title">{{ title }}</p>
         <button :style="{backgroundColor: buttonColor}" class="poster-button">
-            <slot></slot>
+            Shop Now &#8594;
         </button>
     </div>
 </template>

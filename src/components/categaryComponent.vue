@@ -36,6 +36,7 @@
     border-radius: 10px;
     background-color: rgba(195, 189, 189, 0.493);
     margin: 15px;
+    cursor: pointer;
 }
 .category-image {
     width: 90px;
@@ -47,6 +48,7 @@
     font-size: 18px;
     font-weight: 600;
     text-align: center;
+    color: rgb(54, 51, 51);
 }
 .quantity {
     font-size: 12px;
