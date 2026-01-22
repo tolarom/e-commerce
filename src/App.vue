@@ -3,13 +3,16 @@
 import axios from 'axios';
 import categaryComponent from './components/categaryComponent.vue';
 import posterComponent from './components/posterComponent.vue';
+import navigationBar from './components/navigationBar.vue';
+import product from './components/productComponent.vue';
 export default {
-    components: {posterComponent, categaryComponent},
+    components: {posterComponent, categaryComponent, navigationBar, product},
     
   data() {
       return {
         promotions: [],
-        categories: []
+        categories: [],
+        products: []
       }
   },
 
@@ -33,6 +36,16 @@ export default {
       } catch (error) {
         console.log(error)
       }
+    },
+
+    async fetchProducts(){
+      try {
+        const response = await axios.get('http://localhost:3000/api/products');
+        this.products = response.data;
+        console.log(response.data);
+      } catch (error) {
+        console.log(error)
+      }
     }
 
   },
@@ -46,6 +59,7 @@ export default {
 </script>
 
 <template>
+    <navigationBar title="Featured Categories"></navigationBar>
     <div>
         <div class="categary-container">
             <categaryComponent 
@@ -67,6 +81,27 @@ export default {
             ></posterComponent>
         </div>
     </div>
+    <br>
+    <br>
+    <br>
+    <br><br>
+    <navigationBar title="Popular Products"></navigationBar>
+    <div class="categary-container">
+        <product 
+          v-for="prod in products" 
+          :key="prod.id"
+          :name="prod.name" 
+          :rating="prod.rating" 
+          :size="prod.size" 
+          :image="prod.image" 
+          :price="prod.price" 
+          :promotionAsPercentage="prod.promotionAsPercentage" 
+          :categoryId="prod.categoryId" 
+          :inStock="prod.inStock" 
+          :countSold="prod.countSold" 
+          :group="prod.group">
+        </product>
+      </div>
 </template>
 
 <style scoped>
@@ -78,10 +113,17 @@ export default {
 } 
 .poster-container {
     width: 100%;
-    display: flex;
-    gap: 20px;
+    display: flex; 
+    justify-content: center;
+    gap: 60px;
     margin-top: 30px;
     height: 200px;
+}
+.product-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 </style>
