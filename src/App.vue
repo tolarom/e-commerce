@@ -93,7 +93,7 @@ export default {
           :name="prod.name" 
           :rating="prod.rating" 
           :size="prod.size" 
-          :image="prod.image" 
+          :image="`http://localhost:3000/${prod.image}`" 
           :price="prod.price" 
           :promotionAsPercentage="prod.promotionAsPercentage" 
           :categoryId="prod.categoryId" 
